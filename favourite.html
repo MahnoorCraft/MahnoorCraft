@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Schools - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="Register.html" class="btn btn-primary">Register</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="favorites-hero">
+      <div class="container">
+        <span class="eyebrow">Saved Schools</span>
+
+        <h1>Your Favorite Gujranwala <br> Schools</h1>
+
+        <p>
+          View schools you saved during your search and compare them later before
+          making a final decision.
+        </p>
+      </div>
+    </section>
+
+    <section class="favorites-section">
+      <div class="container">
+        <div class="favorites-head">
+          <div>
+            <span class="eyebrow">My List</span>
+            <h2>Saved School Profiles</h2>
+            <p id="favoritesSubtitle">Loading your saved schools...</p>
+          </div>
+
+          <a href="search-schools.html" class="compare-btn">Find More Schools</a>
+        </div>
+
+        <div class="favorites-grid" id="favoritesGrid">
+          <div class="empty-state">
+            <h3>Loading Saved Schools...</h3>
+            <p>Please wait while we fetch your saved schools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">E</span>
+          <span>Edu Finder</span>
+        </a>
+        <p>
+          Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="Register.html">Register</a>
+        <a href="favorites.html">Saved Schools</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 Gujranwala, Pakistan</p>
+        <p>📞 0300-1234567</p>
+        <p>✉️ support@edufinder.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Message</div>
+
+  <script>
+    const API_BASE_URL = "http://localhost:5000/api";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const toast = document.getElementById("toast");
+    const favoritesGrid = document.getElementById("favoritesGrid");
+    const favoritesSubtitle = document.getElementById("favoritesSubtitle");
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    }
+
+    function showToast(message) {
+      if (!toast) return;
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+    function formatFee(fee) {
+      return `Rs. ${Number(fee || 0).toLocaleString()}`;
+    }
+
+    function facilitiesText(facilities) {
+      if (!facilities || facilities.length === 0) {
+        return "";
+      }
+
+      return facilities.map((facility) => `<span>${facility}</span>`).join("");
+    }
+
+    function normalizeSchool(school) {
+      return {
+        _id: school._id,
+        name: school.name || "School Name",
+        city: school.city || "Gujranwala",
+        level: school.level || "Matric",
+        monthlyFee: Number(school.monthlyFee || 0),
+        rating: Number(school.rating || 0),
+        resultPercentage: Number(school.resultPercentage || 0),
+        facilities: Array.isArray(school.facilities) ? school.facilities : []
+      };
+    }
+
+    async function loadFavorites() {
+      const token = localStorage.getItem("eduFinderToken");
+
+      if (!token) {
+        favoritesGrid.innerHTML = `
+          <div class="empty-state">
+            <h3>Please Login First</h3>
+            <p>You need to login before viewing your saved schools.</p>
+            <a href="login.html" class="btn btn-primary">Login Now</a>
+          </div>
+        `;
+
+        favoritesSubtitle.textContent = "Login required to view saved schools.";
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/favorites`, {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+          showToast(data.message || "Failed to load saved schools.");
+          return;
+        }
+
+        const savedSchools = data.favorites
+          .map((favorite) => favorite.schoolId)
+          .filter(Boolean)
+          .map(normalizeSchool);
+
+        favoritesSubtitle.textContent =
+          `You have saved ${savedSchools.length} school profile${savedSchools.length === 1 ? "" : "s"}.`;
+
+        if (savedSchools.length === 0) {
+          favoritesGrid.innerHTML = `
+            <div class="empty-state">
+              <h3>No Saved Schools Yet</h3>
+              <p>Go to Find Schools, open any school detail page, and click Save School.</p>
+              <a href="search-schools.html" class="btn btn-primary">Find Schools</a>
+            </div>
+          `;
+          return;
+        }
+
+        renderFavorites(savedSchools);
+
+      } catch (error) {
+        showToast("Backend server is not running.");
+      }
+    }
+
+    function renderFavorites(savedSchools) {
+      favoritesGrid.innerHTML = savedSchools.map((school) => {
+        return `
+          <article class="advanced-school-card favorite-card">
+            <div class="advanced-school-cover">
+              <span class="level-pill">${school.level}</span>
+              <span class="rating-circle">${school.rating}</span>
+            </div>
+
+            <h3>${school.name}</h3>
+            <p class="advanced-school-location">📍 ${school.city}</p>
+
+            <div class="school-info-grid">
+              <div>
+                <span>Fees</span>
+                <b>${formatFee(school.monthlyFee)}</b>
+              </div>
+
+              <div>
+                <span>Result</span>
+                <b>${school.resultPercentage}%</b>
+              </div>
+            </div>
+
+            <div class="info-pills">
+              ${facilitiesText(school.facilities)}
+            </div>
+
+            <div class="advanced-card-actions">
+              <a href="School-detail.html?id=${school._id}" class="view-btn">
+                View Details
+              </a>
+
+              <button class="compare-btn remove-save-btn" onclick="removeFavorite('${school._id}')">
+                Remove
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function removeFavorite(schoolId) {
+      const token = localStorage.getItem("eduFinderToken");
+
+      if (!token) {
+        showToast("Please login first.");
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/favorites/${schoolId}`, {
+          method: "DELETE",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          }
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+          showToast(data.message || "Failed to remove school.");
+          return;
+        }
+
+        showToast("School removed from saved list.");
+        loadFavorites();
+
+      } catch (error) {
+        showToast("Backend server is not running.");
+      }
+    }
+
+    loadFavorites();
+  </script>
+</body>
+</html>

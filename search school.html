@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Schools - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="search-schools.html" class="active">Find Schools</a>
+        <a href="#">Compare</a>
+        <a href="#">For Schools</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="login-link">Login</a>
+        <a href="Register.html" class="btn btn-primary">Register</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-hero">
+      <div class="container">
+        <span class="eyebrow">Find Schools</span>
+        <h1>Search Gujranwala Schools by Fees, Level, Rating and Facilities</h1>
+        <p>
+          Use smart filters to find schools that match your budget, education level,
+          location, and required facilities.
+        </p>
+      </div>
+    </section>
+
+    <section class="school-search-page">
+      <div class="container search-layout">
+        <aside class="filter-sidebar">
+          <div class="filter-header">
+            <h2>Filters</h2>
+            <button id="clearFiltersBtn">Clear</button>
+          </div>
+
+          <div class="filter-group">
+            <label>Search by Name</label>
+            <input type="text" id="schoolNameSearch" placeholder="Type school name...">
+          </div>
+
+          <div class="filter-group">
+            <label>City</label>
+            <select id="filterCity">
+              <option value="all">All Gujranwala</option>
+              <option value="Gujranwala">Gujranwala</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>School Level</label>
+            <select id="filterLevel">
+              <option value="all">All Levels</option>
+              <option value="Primary">Primary</option>
+              <option value="Middle">Middle</option>
+              <option value="Matric">Matric</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Maximum Monthly Fees</label>
+            <select id="filterFees">
+              <option value="all">Any Budget</option>
+              <option value="10000">Under Rs. 10,000</option>
+              <option value="15000">Under Rs. 15,000</option>
+              <option value="20000">Under Rs. 20,000</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Minimum Rating</label>
+            <select id="filterRating">
+              <option value="all">Any Rating</option>
+              <option value="4.4">4.4+</option>
+              <option value="4.5">4.5+</option>
+              <option value="4.7">4.7+</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Facility</label>
+            <select id="filterFacility">
+              <option value="all">Any Facility</option>
+              <option value="Library">Library</option>
+              <option value="Computer Lab">Computer Lab</option>
+              <option value="Transport">Transport</option>
+              <option value="Sports">Sports</option>
+              <option value="Science Lab">Science Lab</option>
+            </select>
+          </div>
+        </aside>
+
+        <div class="search-results-area">
+          <div class="results-topbar">
+            <div>
+              <span class="eyebrow">Results</span>
+              <h2>Available Schools</h2>
+              <p id="resultCount">Showing all schools</p>
+            </div>
+
+            <select id="sortSchools">
+              <option value="default">Sort by Default</option>
+              <option value="ratingHigh">Highest Rating</option>
+              <option value="feesLow">Lowest Fees</option>
+              <option value="resultHigh">Best Result</option>
+            </select>
+          </div>
+
+          <div class="advanced-school-grid" id="advancedSchoolGrid"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+      <p>
+        Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="search-schools.html">Find Schools</a>
+      <a href="Compare.html">Compare</a>
+      <a href="school.html">For Schools</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Support</h3>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="Register.html">Register</a>
+      <a href="favorites.html">Saved Schools</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>📍 Gujranwala, Pakistan</p>
+      <p>📞 0300-1234567</p>
+      <p>✉️ support@edufinder.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+  </div>
+</footer>
+  </main>
+
+  <div class="toast" id="toast">Filter applied!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

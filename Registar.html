@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Edu Finder</title>
+
+<link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="auth-page">
+    <div class="auth-bg-circle circle-left"></div>
+    <div class="auth-bg-circle circle-right"></div>
+
+    <div class="auth-container register-layout">
+      <div class="auth-brand-panel">
+        <a href="index.html" class="logo auth-logo">
+          <span class="logo-icon">E</span>
+          <span>Edu Finder</span>
+        </a>
+
+        <div class="auth-brand-content">
+          <span class="eyebrow">Create Account</span>
+          <h1>Join Edu Finder and Start Your Smart School Search</h1>
+          <p>
+            Parents can search and compare schools. Schools can create profiles,
+            update fees, facilities, results, and announcements.
+          </p>
+        </div>
+
+        <div class="auth-check-list">
+          <div>✅ Smart school search</div>
+          <div>✅ Save favorite schools</div>
+          <div>✅ School profile management</div>
+          <div>✅ Admin approval workflow</div>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <h2>Create Account</h2>
+          <p>Choose account type and fill required details.</p>
+        </div>
+
+        <div class="role-tabs">
+          <button class="role-tab active" data-register-role="parent">Parent / Student</button>
+          <button class="role-tab" data-register-role="school">School</button>
+        </div>
+
+        <form class="auth-form" id="registerForm">
+          <input type="hidden" id="registerRole" value="parent">
+
+          <div class="form-group">
+            <label id="nameLabel">Full Name</label>
+            <div class="input-wrap">
+              <span>👤</span>
+              <input type="text" id="registerName" placeholder="Enter full name">
+            </div>
+            <small class="error-text"></small>
+          </div>
+
+          <div class="form-group school-only hidden">
+            <label>School Name</label>
+            <div class="input-wrap">
+              <span>🏫</span>
+              <input type="text" id="schoolName" placeholder="Enter school name">
+            </div>
+            <small class="error-text"></small>
+          </div>
+
+          <div class="form-two-col">
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-wrap">
+                <span>✉️</span>
+                <input type="email" id="registerEmail" placeholder="Email address">
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <div class="input-wrap">
+                <span>📞</span>
+                <input type="text" id="registerPhone" placeholder="03xxxxxxxxx">
+              </div>
+              <small class="error-text"></small>
+            </div>
+          </div>
+
+          <div class="form-two-col school-only hidden">
+            <div class="form-group">
+              <label>City</label>
+              <div class="input-wrap">
+                <span>📍</span>
+                <input type="text" id="schoolCity" placeholder="Enter city">
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>School Level</label>
+              <div class="input-wrap">
+                <span>🎓</span>
+                <select id="schoolLevel">
+                  <option value="">Select level</option>
+                  <option value="Primary">Primary</option>
+                  <option value="Middle">Middle</option>
+                  <option value="Matric">Matric</option>
+                  <option value="College">College</option>
+                </select>
+              </div>
+              <small class="error-text"></small>
+            </div>
+          </div>
+
+          <div class="form-two-col">
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-wrap">
+                <span>🔒</span>
+                <input type="password" id="registerPassword" placeholder="Create password">
+                <button type="button" class="password-toggle" data-target="registerPassword">Show</button>
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <div class="input-wrap">
+                <span>🔐</span>
+                <input type="password" id="confirmPassword" placeholder="Confirm password">
+              </div>
+              <small class="error-text"></small>
+            </div>
+          </div>
+
+          <label class="check-label terms-line">
+            <input type="checkbox" id="termsCheck">
+            <span>I agree to the terms and privacy policy.</span>
+          </label>
+          <small class="error-text terms-error"></small>
+
+          <button type="submit" class="btn auth-submit">Create Account</button>
+
+          <p class="auth-switch">
+            Already have an account?
+            <a href="login.html">Login Here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">Account created successfully!</div>
+
+<script src="script.js"></script>
+</body>
+</html>

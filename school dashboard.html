@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Dashboard - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="school-dash-layout">
+    <aside class="school-dash-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="logo dashboard-logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="sidebar-menu">
+        <a href="school-dashboard.html" class="active">📊 Dashboard</a>
+        <a href="#">🏫 School Profile</a>
+        <a href="#">💰 Fees</a>
+        <a href="#">🎯 Facilities</a>
+        <a href="#">📢 Announcements</a>
+        <a href="#">📩 Requests</a>
+      </nav>
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar">S</div>
+        <div>
+          <h4>School Panel</h4>
+          <p>Management</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="school-dash-main">
+      <header class="dashboard-topbar">
+        <button class="dash-menu-btn" id="dashMenuBtn">☰</button>
+
+        <div>
+          <h1>School Dashboard</h1>
+          <p>Update your school profile, fees, facilities, results, and announcements.</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+          <a href="index.html" class="logout-btn">Back Home</a>
+        </div>
+      </header>
+
+      <section class="school-dash-stats">
+        <article class="school-dash-stat">
+          <div class="stat-icon blue">👁️</div>
+          <div>
+            <span>Profile Views</span>
+            <h3>1.2K</h3>
+            <p>This month</p>
+          </div>
+        </article>
+
+        <article class="school-dash-stat">
+          <div class="stat-icon green">📩</div>
+          <div>
+            <span>Parent Requests</span>
+            <h3>48</h3>
+            <p>New inquiries</p>
+          </div>
+        </article>
+
+        <article class="school-dash-stat">
+          <div class="stat-icon orange">⭐</div>
+          <div>
+            <span>Rating</span>
+            <h3>4.7</h3>
+            <p>Average score</p>
+          </div>
+        </article>
+
+        <article class="school-dash-stat">
+          <div class="stat-icon purple">✅</div>
+          <div>
+            <span>Profile Status</span>
+            <h3>86%</h3>
+            <p>Completed</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="school-dash-grid">
+        <div class="school-dash-panel large-school-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Profile Editor</span>
+              <h2>Update School Information</h2>
+            </div>
+          </div>
+
+          <form class="school-update-form">
+            <div class="form-two-col">
+              <div class="form-group">
+                <label>School Name</label>
+                <div class="input-wrap">
+                  <span>🏫</span>
+                  <input type="text" value="Punjab Grammar School">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>City</label>
+                <div class="input-wrap">
+                  <span>📍</span>
+                  <input type="text" value="Gujranwala">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-two-col">
+              <div class="form-group">
+                <label>School Level</label>
+                <div class="input-wrap">
+                  <span>🎓</span>
+                  <select>
+                    <option>Matric</option>
+                    <option>Middle</option>
+                    <option>Primary</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Monthly Fees</label>
+                <div class="input-wrap">
+                  <span>💰</span>
+                  <input type="text" value="Rs. 12,000">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>School Description</label>
+              <textarea class="school-textarea">Punjab Grammar School provides quality education with updated facilities, transport, library, and computer lab support.</textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="showToast('School profile updated successfully.')">
+              Save Changes
+            </button>
+          </form>
+        </div>
+
+        <div class="school-dash-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Completion</span>
+              <h2>Profile Strength</h2>
+            </div>
+          </div>
+
+          <div class="profile-strength">
+            <div class="circle-progress">
+              <span>86%</span>
+            </div>
+            <p>Your school profile is almost complete. Add more details to improve visibility.</p>
+            <button class="panel-btn full-btn" onclick="showToast('Profile checklist opened.')">
+              View Checklist
+            </button>
+          </div>
+        </div>
+
+        <div class="school-dash-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Facilities</span>
+              <h2>Manage Facilities</h2>
+            </div>
+          </div>
+
+          <div class="facility-manage-list">
+            <label><input type="checkbox" checked> Library</label>
+            <label><input type="checkbox" checked> Computer Lab</label>
+            <label><input type="checkbox" checked> Transport</label>
+            <label><input type="checkbox"> Science Lab</label>
+            <label><input type="checkbox"> Sports Ground</label>
+            <label><input type="checkbox"> Security</label>
+          </div>
+
+          <button class="btn btn-primary full-width" onclick="showToast('Facilities updated successfully.')">
+            Update Facilities
+          </button>
+        </div>
+
+        <div class="school-dash-panel large-school-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Announcements</span>
+              <h2>Recent Updates</h2>
+            </div>
+
+            <button class="panel-btn" onclick="showToast('New announcement modal opened.')">Add New</button>
+          </div>
+
+          <div class="announcement-list">
+            <div class="announcement-item">
+              <div class="announcement-icon">📢</div>
+              <div>
+                <h3>Admissions Open</h3>
+                <p>Admissions are open for Matric classes for the new academic session.</p>
+              </div>
+              <span>Today</span>
+            </div>
+
+            <div class="announcement-item">
+              <div class="announcement-icon">🏆</div>
+              <div>
+                <h3>Annual Result Updated</h3>
+                <p>School result percentage has been updated to 92%.</p>
+              </div>
+              <span>2 days ago</span>
+            </div>
+
+            <div class="announcement-item">
+              <div class="announcement-icon">🚌</div>
+              <div>
+                <h3>Transport Available</h3>
+                <p>Transport facility is available for selected Gujranwala areas.</p>
+              </div>
+              <span>1 week ago</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">School dashboard loaded!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Details - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="search-schools.html" class="active">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="Register.html" class="btn btn-primary">Register</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="schoolDetailPage">
+    <section class="detail-hero">
+      <div class="container detail-hero-grid">
+        <div class="detail-hero-content">
+          <span class="eyebrow">School Profile</span>
+
+          <h1 id="detailSchoolName">Loading School...</h1>
+
+          <p class="detail-location" id="detailSchoolMeta">
+            Loading school details...
+          </p>
+
+          <div class="detail-tags" id="detailFacilitiesTop">
+            <span>Loading...</span>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn btn-primary" id="saveSchoolBtn">Save School</button>
+            <a href="contact.html" class="btn btn-outline">Send Inquiry</a>
+          </div>
+        </div>
+
+        <div class="detail-score-card">
+          <div>
+            <span>Rating</span>
+            <b id="detailRating">0/5</b>
+          </div>
+
+          <div>
+            <span>Result</span>
+            <b id="detailResult">0%</b>
+          </div>
+
+          <div>
+            <span>Monthly Fees</span>
+            <b id="detailFee">Rs. 0</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-content-section">
+      <div class="container detail-content-grid">
+        <div class="detail-main">
+          <article class="detail-card">
+            <h2>About School</h2>
+            <p id="detailDescription">
+              Loading school description...
+            </p>
+          </article>
+
+          <article class="detail-card">
+            <h2>Facilities</h2>
+            <div class="facility-grid" id="detailFacilities">
+              <span>Loading facilities...</span>
+            </div>
+          </article>
+
+          <article class="detail-card">
+            <h2>Fee Details</h2>
+
+            <div class="fee-detail-grid">
+              <div>
+                <span>Monthly Fee</span>
+                <b id="detailMonthlyFee">Rs. 0</b>
+              </div>
+
+              <div>
+                <span>Admission Fee</span>
+                <b id="detailAdmissionFee">Rs. 0</b>
+              </div>
+
+              <div>
+                <span>School Level</span>
+                <b id="detailLevel">Loading</b>
+              </div>
+
+              <div>
+                <span>Result Percentage</span>
+                <b id="detailResultBox">0%</b>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="detail-sidebar">
+          <article class="detail-card contact-card">
+            <h2>Contact School</h2>
+
+            <div class="contact-list">
+              <p id="detailAddress">📍 Address: Loading...</p>
+              <p id="detailPhone">📞 Phone: Loading...</p>
+              <p id="detailEmail">✉️ Email: Loading...</p>
+              <p>⏰ Timing: 8:00 AM - 2:00 PM</p>
+            </div>
+
+            <a href="contact.html" class="btn btn-primary full-width">Contact Now</a>
+          </article>
+
+          <article class="detail-card">
+            <h2>Quick Actions</h2>
+
+            <div class="quick-action-list">
+              <a href="Compare.html">Compare School</a>
+              <a href="search-schools.html">Back to Search</a>
+              <a href="favorites.html">Saved Schools</a>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">E</span>
+          <span>Edu Finder</span>
+        </a>
+        <p>
+          Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="Register.html">Register</a>
+        <a href="favorites.html">Saved Schools</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 Gujranwala, Pakistan</p>
+        <p>📞 0300-1234567</p>
+        <p>✉️ support@edufinder.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Message</div>
+
+  <script>
+    const API_BASE_URL = "http://localhost:5000/api";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const toast = document.getElementById("toast");
+    const saveSchoolBtn = document.getElementById("saveSchoolBtn");
+
+    let currentSchoolId = null;
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    }
+
+    function showToast(message) {
+      if (!toast) return;
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+    function formatFee(fee) {
+      return `Rs. ${Number(fee || 0).toLocaleString()}`;
+    }
+
+    function getSchoolIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id");
+    }
+
+    function renderFacilityPills(facilities) {
+      if (!facilities || facilities.length === 0) {
+        return "<span>Facilities not available</span>";
+      }
+
+      return facilities.map((facility) => `<span>${facility}</span>`).join("");
+    }
+
+    async function loadSchoolDetail() {
+      currentSchoolId = getSchoolIdFromURL();
+
+      if (!currentSchoolId) {
+        showToast("School ID not found.");
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/schools/${currentSchoolId}`);
+        const data = await response.json();
+
+        if (!data.success || !data.school) {
+          showToast("School not found.");
+          return;
+        }
+
+        const school = data.school;
+
+        document.title = `${school.name} - Edu Finder`;
+
+        document.getElementById("detailSchoolName").textContent = school.name;
+
+        document.getElementById("detailSchoolMeta").textContent =
+          `${school.city} • ${school.level} Level • Private School`;
+
+        document.getElementById("detailFacilitiesTop").innerHTML =
+          renderFacilityPills(school.facilities);
+
+        document.getElementById("detailRating").textContent =
+          `${school.rating}/5`;
+
+        document.getElementById("detailResult").textContent =
+          `${school.resultPercentage}%`;
+
+        document.getElementById("detailFee").textContent =
+          formatFee(school.monthlyFee);
+
+        document.getElementById("detailDescription").textContent =
+          school.description ||
+          `${school.name} is listed as one of the available schools in Gujranwala. Parents can review its fees, result percentage, rating, facilities, and contact information before comparing it with other schools.`;
+
+        document.getElementById("detailFacilities").innerHTML =
+          renderFacilityPills(school.facilities);
+
+        document.getElementById("detailMonthlyFee").textContent =
+          formatFee(school.monthlyFee);
+
+        document.getElementById("detailAdmissionFee").textContent =
+          formatFee(school.admissionFee);
+
+        document.getElementById("detailLevel").textContent =
+          school.level;
+
+        document.getElementById("detailResultBox").textContent =
+          `${school.resultPercentage}%`;
+
+        document.getElementById("detailAddress").textContent =
+          `📍 Address: ${school.address || "Gujranwala"}`;
+
+        document.getElementById("detailPhone").textContent =
+          `📞 Phone: ${school.phone || "Not available"}`;
+
+        document.getElementById("detailEmail").textContent =
+          `✉️ Email: ${school.email || "Not available"}`;
+
+      } catch (error) {
+        showToast("Backend server is not running.");
+      }
+    }
+
+    async function saveCurrentSchool() {
+      const token = localStorage.getItem("eduFinderToken");
+
+      if (!token) {
+        showToast("Please login first to save this school.");
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1200);
+
+        return;
+      }
+
+      if (!currentSchoolId) {
+        showToast("School ID not found.");
+        return;
+      }
+
+      try {
+        saveSchoolBtn.disabled = true;
+        saveSchoolBtn.textContent = "Saving...";
+
+        const response = await fetch(`${API_BASE_URL}/favorites`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            schoolId: currentSchoolId
+          })
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+          showToast(data.message || "Failed to save school.");
+          return;
+        }
+
+        showToast("School saved successfully.");
+        saveSchoolBtn.textContent = "Saved";
+
+      } catch (error) {
+        showToast("Backend server is not running.");
+      } finally {
+        saveSchoolBtn.disabled = false;
+
+        if (saveSchoolBtn.textContent !== "Saved") {
+          saveSchoolBtn.textContent = "Save School";
+        }
+      }
+    }
+
+    if (saveSchoolBtn) {
+      saveSchoolBtn.addEventListener("click", saveCurrentSchool);
+    }
+
+    loadSchoolDetail();
+  </script>
+</body>
+</html>

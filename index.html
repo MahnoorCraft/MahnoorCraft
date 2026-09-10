@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edu Finder - Find & Compare Schools</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+     <nav class="nav-menu" id="navMenu">
+     <a href="index.html" class="active">Home</a>
+     <a href="search-schools.html">Find Schools</a>
+     <a href="Compare.html">Compare</a>
+     <a href="school.html">For Schools</a>
+     <a href="contact.html">Contact</a>
+</nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-bg-shape shape-one"></div>
+      <div class="hero-bg-shape shape-two"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Smart School Search Platform</span>
+
+          <h1>Find the Best School for Your Child Without Wasting Time</h1>
+
+          <p>
+            Search, filter, save, and compare schools by city, fees, ratings, results,
+            and facilities from one clean dashboard.
+          </p>
+
+          <div class="hero-search-card">
+            <div class="search-field">
+              <label>City</label>
+              <select id="citySelect">
+               <option value="">Select City</option>
+              <option value="gujranwala">Gujranwala</option>
+              </select>
+            </div>
+
+            <div class="search-field">
+              <label>School Level</label>
+              <select id="levelSelect">
+                <option value="">Select Level</option>
+                <option value="primary">Primary</option>
+                <option value="middle">Middle</option>
+                <option value="matric">Matric</option>
+                
+              </select>
+            </div>
+
+            <button class="btn btn-search" id="quickSearchBtn">
+              Search Schools
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>250+</strong>
+              <span>Listed Schools</span>
+            </div>
+            <div>
+              <strong>15K+</strong>
+              <span>Parent Searches</span>
+            </div>
+            <div>
+              <strong>4.8</strong>
+              <span>Average Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="dashboard-preview">
+            <div class="preview-top">
+              <div>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p>Live School Match</p>
+            </div>
+
+            <div class="match-card main-match">
+              <div class="school-avatar">PG</div>
+              <div>
+                <h3>Punjab Grammar School</h3>
+                <p>Gujranwala • Matric Level</p>
+              </div>
+              <strong>92%</strong>
+            </div>
+
+            <div class="mini-progress">
+              <div class="progress-info">
+                <span>Fees Match</span>
+                <b>85%</b>
+              </div>
+              <div class="progress-bar">
+                <span style="width: 85%;"></span>
+              </div>
+            </div>
+
+            <div class="mini-progress">
+              <div class="progress-info">
+                <span>Facilities</span>
+                <b>78%</b>
+              </div>
+              <div class="progress-bar">
+                <span style="width: 78%;"></span>
+              </div>
+            </div>
+
+            <div class="compare-box">
+              <h4>Compare Selected Schools</h4>
+
+              <div class="compare-row">
+                <span>Fees</span>
+                <b>Rs. 12,000</b>
+              </div>
+
+              <div class="compare-row">
+                <span>Rating</span>
+                <b>4.7/5</b>
+              </div>
+
+              <div class="compare-row">
+                <span>Result</span>
+                <b>92%</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-one">
+            <span>⭐</span>
+            <div>
+              <b>Top Rated</b>
+              <p>Best result schools</p>
+            </div>
+          </div>
+
+          <div class="floating-card floating-two">
+            <span>📍</span>
+            <div>
+              <b>Nearby Schools</b>
+              <p>Based on your city</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Core Features</span>
+          <h2>Everything Parents Need in One Place</h2>
+          <p>
+            Edu Finder gives users a simple way to choose schools with clear data,
+            smart filters, and easy comparison.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Smart Search</h3>
+            <p>Find schools by city, level, fees range, rating, facilities, and result performance.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>School Comparison</h3>
+            <p>Compare multiple schools side by side using fees, rating, facilities, and results.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">❤️</div>
+            <h3>Save Favorites</h3>
+            <p>Save preferred schools and view them later from your personal dashboard.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🏫</div>
+            <h3>School Profiles</h3>
+            <p>Schools can show their fees, location, facilities, achievements, and announcements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="schools-section">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <span class="eyebrow">Popular Schools</span>
+            <h2>Top School Matches</h2>
+          </div>
+          <a href="#" class="btn btn-light">View All Schools</a>
+        </div>
+
+        <div class="school-grid" id="schoolGrid"></div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container steps-grid">
+        <div class="section-heading left-heading">
+          <span class="eyebrow">How It Works</span>
+          <h2>Choose Better in Three Simple Steps</h2>
+          <p>
+            Instead of visiting many school websites, parents can use one platform
+            to search, compare, and decide.
+          </p>
+        </div>
+
+        <div class="steps-list">
+          <div class="step-item">
+            <span>01</span>
+            <div>
+              <h3>Search Schools</h3>
+              <p>Select city, school level, fees range, and facilities.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span>02</span>
+            <div>
+              <h3>Compare Options</h3>
+              <p>Check fees, ratings, results, location, and facilities side by side.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span>03</span>
+            <div>
+              <h3>Save Your Choice</h3>
+              <p>Save favorite schools and contact them when you are ready.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+      <p>
+        Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="search-schools.html">Find Schools</a>
+      <a href="Compare.html">Compare</a>
+      <a href="school.html">For Schools</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Support</h3>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="Register.html">Register</a>
+      <a href="favorites.html">Saved Schools</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>📍 Gujranwala, Pakistan</p>
+      <p>📞 0300-1234567</p>
+      <p>✉️ support@edufinder.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+  </div>
+</footer>
+  </main>
+
+  <div class="toast" id="toast">Search feature ready for next step!</div>
+
+<script src="script.js"></script>
+</body>
+</html>

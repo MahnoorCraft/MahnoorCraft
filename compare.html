@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Schools - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html" class="active">Compare</a>
+        <a href="school.html">For Schools</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="Register.html" class="btn btn-primary">Register</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="compare-hero">
+      <div class="container">
+        <span class="eyebrow">School Comparison</span>
+
+        <h1>Compare Gujranwala <br> Schools Side by Side</h1>
+
+        <p>
+          Check fees, rating, result, level, and facilities in one clean table so parents can
+          make a better school decision quickly.
+        </p>
+      </div>
+    </section>
+
+    <section class="compare-section">
+      <div class="container">
+        <div class="compare-stats">
+          <div>
+            <span>Selected Schools</span>
+            <b id="selectedSchoolsCount">0</b>
+            <p>Schools added for comparison</p>
+          </div>
+
+          <div>
+            <span>Best Rating</span>
+            <b id="bestRating">0</b>
+            <p id="bestRatingSchool">Loading...</p>
+          </div>
+
+          <div>
+            <span>Lowest Fees</span>
+            <b id="lowestFees">Rs. 0</b>
+            <p id="lowestFeesSchool">Loading...</p>
+          </div>
+
+          <div>
+            <span>Best Result</span>
+            <b id="bestResult">0%</b>
+            <p id="bestResultSchool">Loading...</p>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <div class="compare-card-head">
+            <div>
+              <span class="eyebrow">Detailed Comparison</span>
+              <h2>School Comparison Table</h2>
+            </div>
+
+            <a href="search-schools.html" class="compare-btn">Add More Schools</a>
+          </div>
+
+          <div class="compare-select-area">
+            <div class="compare-select-box">
+              <label>School 1</label>
+              <select id="compareSchoolOne"></select>
+            </div>
+
+            <div class="compare-select-box">
+              <label>School 2</label>
+              <select id="compareSchoolTwo"></select>
+            </div>
+
+            <div class="compare-select-box">
+              <label>School 3</label>
+              <select id="compareSchoolThree"></select>
+            </div>
+          </div>
+
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <tbody id="compareTableBody">
+                <tr>
+                  <td>Loading...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">E</span>
+          <span>Edu Finder</span>
+        </a>
+        <p>
+          Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="Register.html">Register</a>
+        <a href="favorites.html">Saved Schools</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📍 Gujranwala, Pakistan</p>
+        <p>📞 0300-1234567</p>
+        <p>✉️ support@edufinder.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Message</div>
+
+  <script>
+    const API_BASE_URL = "http://localhost:5000/api";
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const toast = document.getElementById("toast");
+
+    const compareSchoolOne = document.getElementById("compareSchoolOne");
+    const compareSchoolTwo = document.getElementById("compareSchoolTwo");
+    const compareSchoolThree = document.getElementById("compareSchoolThree");
+    const compareTableBody = document.getElementById("compareTableBody");
+
+    const selectedSchoolsCount = document.getElementById("selectedSchoolsCount");
+    const bestRating = document.getElementById("bestRating");
+    const bestRatingSchool = document.getElementById("bestRatingSchool");
+    const lowestFees = document.getElementById("lowestFees");
+    const lowestFeesSchool = document.getElementById("lowestFeesSchool");
+    const bestResult = document.getElementById("bestResult");
+    const bestResultSchool = document.getElementById("bestResultSchool");
+
+    let allSchools = [];
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    }
+
+    function showToast(message) {
+      if (!toast) return;
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+    function formatFee(fee) {
+      return `Rs. ${Number(fee || 0).toLocaleString()}`;
+    }
+
+    function facilitiesText(facilities) {
+      if (!facilities || facilities.length === 0) {
+        return "Not available";
+      }
+
+      return facilities.join(", ");
+    }
+
+    function normalizeSchool(school) {
+      return {
+        _id: school._id,
+        name: school.name || "School Name",
+        city: school.city || "Gujranwala",
+        level: school.level || "Matric",
+        monthlyFee: Number(school.monthlyFee || 0),
+        admissionFee: Number(school.admissionFee || 0),
+        rating: Number(school.rating || 0),
+        resultPercentage: Number(school.resultPercentage || 0),
+        facilities: Array.isArray(school.facilities) ? school.facilities : [],
+        address: school.address || "Gujranwala",
+        phone: school.phone || "Not available",
+        email: school.email || "Not available"
+      };
+    }
+
+    async function loadCompareSchools() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/schools`);
+        const data = await response.json();
+
+        if (!data.success || !Array.isArray(data.schools)) {
+          showToast("Schools data not found.");
+          return;
+        }
+
+        allSchools = data.schools.map(normalizeSchool);
+
+        fillSchoolDropdowns();
+        renderCompareStats();
+        renderCompareTable();
+
+      } catch (error) {
+        showToast("Backend server is not running.");
+      }
+    }
+
+    function fillSchoolDropdowns() {
+      const options = allSchools.map((school) => {
+        return `<option value="${school._id}">${school.name}</option>`;
+      }).join("");
+
+      compareSchoolOne.innerHTML = options;
+      compareSchoolTwo.innerHTML = options;
+      compareSchoolThree.innerHTML = options;
+
+      if (allSchools[0]) compareSchoolOne.value = allSchools[0]._id;
+      if (allSchools[1]) compareSchoolTwo.value = allSchools[1]._id;
+      if (allSchools[2]) compareSchoolThree.value = allSchools[2]._id;
+    }
+
+    function getSelectedSchools() {
+      const ids = [
+        compareSchoolOne.value,
+        compareSchoolTwo.value,
+        compareSchoolThree.value
+      ];
+
+      return ids
+        .map((id) => allSchools.find((school) => school._id === id))
+        .filter(Boolean);
+    }
+
+    function renderCompareStats() {
+      const selected = getSelectedSchools();
+
+      if (selected.length === 0) return;
+
+      const topRatingSchool = [...selected].sort((a, b) => b.rating - a.rating)[0];
+      const lowFeeSchool = [...selected].sort((a, b) => a.monthlyFee - b.monthlyFee)[0];
+      const topResultSchool = [...selected].sort((a, b) => b.resultPercentage - a.resultPercentage)[0];
+
+      selectedSchoolsCount.textContent = selected.length;
+
+      bestRating.textContent = topRatingSchool.rating;
+      bestRatingSchool.textContent = topRatingSchool.name;
+
+      lowestFees.textContent = formatFee(lowFeeSchool.monthlyFee);
+      lowestFeesSchool.textContent = lowFeeSchool.name;
+
+      bestResult.textContent = `${topResultSchool.resultPercentage}%`;
+      bestResultSchool.textContent = topResultSchool.name;
+    }
+
+    function renderRow(label, valueGetter) {
+      const selected = getSelectedSchools();
+
+      return `
+        <tr>
+          <td><strong>${label}</strong></td>
+          ${selected.map((school) => `<td>${valueGetter(school)}</td>`).join("")}
+        </tr>
+      `;
+    }
+
+    function renderCompareTable() {
+      const selected = getSelectedSchools();
+
+      if (selected.length === 0) {
+        compareTableBody.innerHTML = `
+          <tr>
+            <td>No schools available for comparison.</td>
+          </tr>
+        `;
+        return;
+      }
+
+      compareTableBody.innerHTML = `
+        <tr class="compare-header-row">
+          <td><strong>Feature</strong></td>
+          ${selected.map((school) => `<td><strong>${school.name}</strong></td>`).join("")}
+        </tr>
+
+        ${renderRow("City", (school) => school.city)}
+        ${renderRow("School Level", (school) => school.level)}
+        ${renderRow("Monthly Fees", (school) => formatFee(school.monthlyFee))}
+        ${renderRow("Admission Fees", (school) => formatFee(school.admissionFee))}
+        ${renderRow("Rating", (school) => `${school.rating}/5`)}
+        ${renderRow("Result", (school) => `${school.resultPercentage}%`)}
+        ${renderRow("Facilities", (school) => facilitiesText(school.facilities))}
+        ${renderRow("Address", (school) => school.address)}
+        ${renderRow("Phone", (school) => school.phone)}
+        ${renderRow("Email", (school) => school.email)}
+      `;
+    }
+
+    [compareSchoolOne, compareSchoolTwo, compareSchoolThree].forEach((select) => {
+      select.addEventListener("change", () => {
+        renderCompareStats();
+        renderCompareTable();
+      });
+    });
+
+    loadCompareSchools();
+  </script>
+</body>
+</html>

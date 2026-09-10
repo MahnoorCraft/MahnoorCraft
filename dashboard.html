@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="logo dashboard-logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="active">📊 Dashboard</a>
+        <a href="#">🔎 Search Schools</a>
+        <a href="#">📌 Saved Schools</a>
+        <a href="#">⚖️ Compare Schools</a>
+        <a href="#">💬 Requests</a>
+        <a href="#">⚙️ Settings</a>
+      </nav>
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar">U</div>
+        <div>
+          <h4 id="sidebarUserName">User Account</h4>
+          <p id="sidebarUserRole">Parent</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <button class="dash-menu-btn" id="dashMenuBtn">☰</button>
+
+        <div>
+          <h1>Welcome Back 👋</h1>
+          <p>Manage your school search, saved schools, and comparison activity.</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+          <button class="notification-btn">🔔</button>
+          <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <section class="dashboard-cards">
+        <article class="dash-stat-card">
+          <div class="stat-icon blue">🏫</div>
+          <div>
+            <span>Total Schools</span>
+            <h3>250+</h3>
+          </div>
+        </article>
+
+        <article class="dash-stat-card">
+          <div class="stat-icon green">📌</div>
+          <div>
+            <span>Saved Schools</span>
+            <h3>12</h3>
+          </div>
+        </article>
+
+        <article class="dash-stat-card">
+          <div class="stat-icon orange">⚖️</div>
+          <div>
+            <span>Comparisons</span>
+            <h3>08</h3>
+          </div>
+        </article>
+
+        <article class="dash-stat-card">
+          <div class="stat-icon purple">⭐</div>
+          <div>
+            <span>Top Rating</span>
+            <h3>4.8</h3>
+          </div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="dash-panel large-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Recommended</span>
+              <h2>Best School Matches</h2>
+            </div>
+            <button class="panel-btn">View All</button>
+          </div>
+
+          <div class="recommended-list">
+            <div class="recommended-item">
+              <div class="school-mini-logo">PG</div>
+              <div>
+                <h3>Punjab Grammar School</h3>
+                <p>Gujranwala • Matric • Rs. 12,000</p>
+              </div>
+              <strong>4.7</strong>
+              <button>Compare</button>
+            </div>
+
+            <div class="recommended-item">
+              <div class="school-mini-logo">CP</div>
+              <div>
+                <h3>City Public School</h3>
+                <p>Lahore • Middle • Rs. 15,000</p>
+              </div>
+              <strong>4.6</strong>
+              <button>Compare</button>
+            </div>
+
+            <div class="recommended-item">
+              <div class="school-mini-logo">BF</div>
+              <div>
+                <h3>Bright Future Academy</h3>
+                <p>Sialkot • Primary • Rs. 9,500</p>
+              </div>
+              <strong>4.8</strong>
+              <button>Compare</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Activity</span>
+              <h2>Recent Searches</h2>
+            </div>
+          </div>
+
+          <div class="activity-list">
+            <div>
+              <span>🔎</span>
+              <p>Schools in Gujranwala under Rs. 15,000</p>
+            </div>
+
+            <div>
+              <span>📍</span>
+              <p>Matric level schools near city area</p>
+            </div>
+
+            <div>
+              <span>⭐</span>
+              <p>Top rated schools with transport facility</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Progress</span>
+              <h2>Profile Strength</h2>
+            </div>
+          </div>
+
+          <div class="profile-strength">
+            <div class="circle-progress">
+              <span>78%</span>
+            </div>
+            <p>Complete your profile to get better school suggestions.</p>
+            <button class="panel-btn full-btn">Update Profile</button>
+          </div>
+        </div>
+
+        <div class="dash-panel large-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Compare</span>
+              <h2>Comparison Overview</h2>
+            </div>
+          </div>
+
+          <div class="comparison-table">
+            <div class="table-row table-head">
+              <span>School</span>
+              <span>Fees</span>
+              <span>Rating</span>
+              <span>Result</span>
+            </div>
+
+            <div class="table-row">
+              <span>Punjab Grammar</span>
+              <span>Rs. 12,000</span>
+              <span>4.7</span>
+              <span>92%</span>
+            </div>
+
+            <div class="table-row">
+              <span>City Public</span>
+              <span>Rs. 15,000</span>
+              <span>4.6</span>
+              <span>89%</span>
+            </div>
+
+            <div class="table-row">
+              <span>Bright Future</span>
+              <span>Rs. 9,500</span>
+              <span>4.8</span>
+              <span>94%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Dashboard loaded successfully!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="search-schools.html">Find Schools</a>
+        <a href="Compare.html">Compare</a>
+        <a href="school.html">For Schools</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <a href="login.html" class="login-link">Login</a>
+        <a href="Register.html" class="btn btn-primary">Register</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-content">
+          <span class="eyebrow">Contact Edu Finder</span>
+          <h1>Need Help Finding or Listing a School?</h1>
+          <p>
+            Parents can ask questions about school search and comparison.
+            School management can contact us for profile approval, updates, and listing support.
+          </p>
+
+          <div class="contact-mini-grid">
+            <div>
+              <strong>24/7</strong>
+              <span>Online Access</span>
+            </div>
+
+            <div>
+              <strong>250+</strong>
+              <span>Listed Schools</span>
+            </div>
+
+            <div>
+              <strong>3</strong>
+              <span>User Roles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h2>Send Message</h2>
+          <p>Fill the form and our team will respond soon.</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label>Your Name</label>
+              <div class="input-wrap">
+                <span>👤</span>
+                <input type="text" id="contactName" placeholder="Enter your name">
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-wrap">
+                <span>✉️</span>
+                <input type="email" id="contactEmail" placeholder="Enter email address">
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>Role</label>
+              <div class="input-wrap">
+                <span>🎯</span>
+                <select id="contactRole">
+                  <option value="">Select role</option>
+                  <option value="Parent">Parent / Student</option>
+                  <option value="School">School Management</option>
+                  <option value="Admin">Admin Support</option>
+                </select>
+              </div>
+              <small class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="contactMessage" placeholder="Write your message..."></textarea>
+              <small class="error-text"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Support Options</span>
+          <h2>How We Can Help</h2>
+          <p>
+            Edu Finder supports parents, schools, and admin users with clear communication.
+          </p>
+        </div>
+
+        <div class="contact-card-grid">
+          <article class="contact-info-card">
+            <div class="contact-icon">👨‍👩‍👧</div>
+            <h3>Parent Support</h3>
+            <p>Get help with school search, saved schools, comparison, and school details.</p>
+          </article>
+
+          <article class="contact-info-card">
+            <div class="contact-icon">🏫</div>
+            <h3>School Support</h3>
+            <p>Ask for profile approval, listing updates, fee changes, and announcement support.</p>
+          </article>
+
+          <article class="contact-info-card">
+            <div class="contact-icon">🛡️</div>
+            <h3>Admin Support</h3>
+            <p>Manage school records, user issues, requests, and system content problems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-details-section">
+      <div class="container contact-details-grid">
+        <div class="contact-detail-box">
+          <span>📍</span>
+          <div>
+            <h3>Location</h3>
+            <p>Gujranwala, Pakistan</p>
+          </div>
+        </div>
+
+        <div class="contact-detail-box">
+          <span>📞</span>
+          <div>
+            <h3>Phone</h3>
+            <p>0300-1234567</p>
+          </div>
+        </div>
+
+        <div class="contact-detail-box">
+          <span>✉️</span>
+          <div>
+            <h3>Email</h3>
+            <p>support@edufinder.com</p>
+          </div>
+        </div>
+
+        <div class="contact-detail-box">
+          <span>⏰</span>
+          <div>
+            <h3>Working Hours</h3>
+            <p>Monday - Saturday, 9 AM - 5 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+      <p>
+        Edu Finder helps parents search, compare, and choose schools in Gujranwala with clear information.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="search-schools.html">Find Schools</a>
+      <a href="Compare.html">Compare</a>
+      <a href="school.html">For Schools</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Support</h3>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="Register.html">Register</a>
+      <a href="favorites.html">Saved Schools</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>📍 Gujranwala, Pakistan</p>
+      <p>📞 0300-1234567</p>
+      <p>✉️ support@edufinder.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Edu Finder. Final Year Project Frontend.</p>
+  </div>
+</footer>
+  </main>
+
+  <div class="toast" id="toast">Message sent successfully!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

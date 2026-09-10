@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Edu Finder</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="dashboardSidebar">
+      <a href="index.html" class="logo dashboard-logo">
+        <span class="logo-icon">E</span>
+        <span>Edu Finder</span>
+      </a>
+
+      <nav class="sidebar-menu">
+        <a href="admin-dashboard.html" class="active">📊 Overview</a>
+        <a href="#">🏫 Schools</a>
+        <a href="#">👥 Users</a>
+        <a href="#">✅ Approvals</a>
+        <a href="#">📢 Announcements</a>
+        <a href="#">⚙️ Settings</a>
+      </nav>
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar">A</div>
+        <div>
+          <h4>Admin Panel</h4>
+          <p>System Control</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="dashboard-topbar">
+        <button class="dash-menu-btn" id="dashMenuBtn">☰</button>
+
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Manage schools, users, approvals, and system activity.</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+          <a href="index.html" class="logout-btn">Back Home</a>
+        </div>
+      </header>
+
+      <section class="admin-stats-grid">
+        <article class="admin-stat-card">
+          <div class="stat-icon blue">🏫</div>
+          <div>
+            <span>Total Schools</span>
+            <h3>250</h3>
+            <p>Registered school profiles</p>
+          </div>
+        </article>
+
+        <article class="admin-stat-card">
+          <div class="stat-icon green">👥</div>
+          <div>
+            <span>Total Users</span>
+            <h3>15K</h3>
+            <p>Parents and students</p>
+          </div>
+        </article>
+
+        <article class="admin-stat-card">
+          <div class="stat-icon orange">⏳</div>
+          <div>
+            <span>Pending Approvals</span>
+            <h3>18</h3>
+            <p>School profiles waiting</p>
+          </div>
+        </article>
+
+        <article class="admin-stat-card">
+          <div class="stat-icon purple">📩</div>
+          <div>
+            <span>Requests</span>
+            <h3>64</h3>
+            <p>New school inquiries</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="admin-content-grid">
+        <div class="admin-panel large-admin-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">School Management</span>
+              <h2>Pending School Approvals</h2>
+            </div>
+
+            <button class="panel-btn">View All</button>
+          </div>
+
+          <div class="approval-list">
+            <div class="approval-item">
+              <div class="school-mini-logo">PG</div>
+              <div>
+                <h3>Punjab Grammar School</h3>
+                <p>Gujranwala • Matric • Submitted today</p>
+              </div>
+
+              <div class="approval-actions">
+                <button class="approve-btn">Approve</button>
+                <button class="reject-btn">Reject</button>
+              </div>
+            </div>
+
+            <div class="approval-item">
+              <div class="school-mini-logo">TC</div>
+              <div>
+                <h3>The City School</h3>
+                <p>Gujranwala • Middle • Profile update request</p>
+              </div>
+
+              <div class="approval-actions">
+                <button class="approve-btn">Approve</button>
+                <button class="reject-btn">Reject</button>
+              </div>
+            </div>
+
+            <div class="approval-item">
+              <div class="school-mini-logo">DA</div>
+              <div>
+                <h3>Dar-e-Arqam School</h3>
+                <p>Gujranwala • Matric • New listing request</p>
+              </div>
+
+              <div class="approval-actions">
+                <button class="approve-btn">Approve</button>
+                <button class="reject-btn">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">System</span>
+              <h2>Quick Actions</h2>
+            </div>
+          </div>
+
+          <div class="quick-actions-grid">
+            <button>➕ Add School</button>
+            <button>👥 Manage Users</button>
+            <button>📢 Post Notice</button>
+            <button>🧾 View Reports</button>
+          </div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Activity</span>
+              <h2>Recent Logs</h2>
+            </div>
+          </div>
+
+          <div class="admin-log-list">
+            <div>
+              <span>✅</span>
+              <p>Beaconhouse profile approved by admin.</p>
+            </div>
+
+            <div>
+              <span>✏️</span>
+              <p>Punjab Grammar updated fee structure.</p>
+            </div>
+
+            <div>
+              <span>👤</span>
+              <p>New parent account registered.</p>
+            </div>
+
+            <div>
+              <span>📩</span>
+              <p>New contact message received.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-panel large-admin-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-label">Records</span>
+              <h2>School Records</h2>
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>School</th>
+                  <th>City</th>
+                  <th>Level</th>
+                  <th>Status</th>
+                  <th>Rating</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Punjab Grammar School</td>
+                  <td>Gujranwala</td>
+                  <td>Matric</td>
+                  <td><span class="status-pill approved">Approved</span></td>
+                  <td>4.7</td>
+                  <td><button class="small-admin-btn">Edit</button></td>
+                </tr>
+
+                <tr>
+                  <td>Beaconhouse School System</td>
+                  <td>Gujranwala</td>
+                  <td>Matric</td>
+                  <td><span class="status-pill approved">Approved</span></td>
+                  <td>4.8</td>
+                  <td><button class="small-admin-btn">Edit</button></td>
+                </tr>
+
+                <tr>
+                  <td>Allied School</td>
+                  <td>Gujranwala</td>
+                  <td>Primary</td>
+                  <td><span class="status-pill pending">Pending</span></td>
+                  <td>4.5</td>
+                  <td><button class="small-admin-btn">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Admin action completed!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
